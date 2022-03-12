@@ -5,43 +5,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Práctica 4</title>
+    <title>Práctica 5</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #efefef;
+        }
+
+        #map {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <button onclick="obtieneUbicacion()">Obtener ubicación</button>
-    <br>
-    <br>
-    <div id="mapa">
-        <img id="imagenMapa" src="" alt="Imagen de mapa">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row m-5">
+                <div class="col-12 p-5">
+                    <h1>Mapa con infoWindow</h1>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <br>
-    <br>
-    <p id="alerta"></p>
+
     <script>
-        var mapa = document.getElementById("mapa");
+        var informacion = "<h1>Universidad De La Salle Bajío</h1>";
 
-        function obtieneUbicacion() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(muestraPosicion);
-            } else {
-                var alerta = document.getElementById("alerta")
-                alerta.innerHTML = "El navegador no disponible Geocalizacion"
+        informacion += "<p><strong>Dirección: Av Universidad 602</p>";
+
+        informacion += "<p><strong>Teléfono:  477 7108500</p>";
+
+        function iniciaMapa() {
+            var propiedades = {
+                center: {
+                    lat: 21.15162,
+                    lng: -101.711022
+                },
+                zoom: 14
             }
-        }
+
+            const mapa = document.getElementById("map");
+
+            const map = new google.maps.Map(mapa, propiedades);
+
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(position => {
+                    let posicion = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    }
+
+                    let propiedadesMarcador = {
+                        position: posicion,
+                        map,
+                        title: "Marcador"
+                    }
+
+                    const marcador = new google.maps.Marker(propiedadesMarcador);
+
+                    map.setCenter(posicion);
+
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: informacion
+                    });
+
+                    marcador.addListener("click", () => {
+                        infoWindow.open(map, marcador);
+                    });
+                });
 
 
-        function muestraPosicion(posicion) {
+            }
 
-            var coordenadas = posicion.coords.latitude + "," + posicion.coords.longitude
 
-            var imagenMapa = document.getElementById("imagenMapa")
-
-            imagenMapa.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + coordenadas +
-                "&zoom=12&size=800x800&key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU"
         }
     </script>
 
@@ -51,6 +95,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa"
+        async defer></script>
 </body>
 
 </html>
