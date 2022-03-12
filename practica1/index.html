@@ -142,19 +142,35 @@
     <script src="https://www.google.com/url?q=https://maps.googleapis.com/maps/api/js?key%3DAIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU%26callback%3DiniciaMapa&sa=D&source=editors&ust=1645754391541402&usg=AOvVaw19dvQDRJVmKpT2DkT284tR"></script>
 
     <script>
-        function inciaMapa() {
-            var coordenadas = {
-                lat: 21.1551610741602, lng: -101.72473545560395 
+        AOS.init();
+      </script>
+    
+      <script>
+    
+        function iniciaMapa() {
+          var coordenadas = {
+            lat: 21.152162,
+            lng: -101.711022
+          }
+    
+          var map = new google.maps.Map(
+            document.getElementById('mapa'),
+            {
+              center: coordenadas,
+              zoom: 15
             }
-            var map =new google.map.Map(
-                document.getElementById('mapa'),
-                {
-                    center: coordenadas,
-                    zoom:15
-                }
-            );
+    
+          );
+    
+          var marcador = new google.maps.Marker({
+            position: coordenadas,
+            map: map
+          });
+    
         }
-    </script>
+    
+    
+      </script>
 
     </body>
 </html>
