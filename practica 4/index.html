@@ -30,9 +30,11 @@
         <div class="container">
             <div class="row m-5">
                 <div class="col-12 p-5" >
-                     
+                    
+                        
                     <center><h1> <p class="text-primary">Mapa Con InfoWindow </p></h1> </center>
                     
+                
                     <div id="map"></div>
                 </div>
             </div>
@@ -42,17 +44,17 @@
 
     
     <script>
-        var informacion = "<h1>Universidad De La Salle Bajío</h1>";
+        var informacion = "<h3>Universidad De La Salle Bajío</h3>";
 
-        informacion += "<p><strong>Dirección: Av Universidad 602</p>";
+        informacion += "<p><strong>Dirección: Av Universidad 602</strong></p>";
 
-        informacion += "<p><strong>Teléfono: 477 7108500</p>";
+        informacion += "<p><strong>Teléfono: 477 7108500</strong></p>";
 
         function iniciaMapa() {
             var propiedades = {
                 center: {
-                    lat: 21.15162,
-                    lng: -101.711022
+                    lat: 21.15603489071805, 
+                    lng: -101.712580656
                 },
                 zoom: 14
             }
@@ -94,9 +96,6 @@
 
         }
     </script>
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
