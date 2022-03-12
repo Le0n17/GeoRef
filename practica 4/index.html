@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+    <link rel="stylesheet" href="style-fondo.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +12,18 @@
 </head>
 
 <body>
-
-    <button onclick="obtieneUbicacion()">Obtener ubicación</button>
+<br>
+<br>
+    <center><button  onclick="obtieneUbicacion()" type="button" class="btn btn-primary">Obtener ubicación</button></center>
     <br>
     <br>
+    <center>
     <div id="mapa">
         <img id="imagenMapa" src="" alt="Imagen de mapa">
     </div>
     <br>
     <br>
+</center>
     <p id="alerta"></p>
     <script>
         var mapa = document.getElementById("mapa");
@@ -44,9 +48,6 @@
                 "&zoom=12&size=800x800&key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU"
         }
     </script>
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
