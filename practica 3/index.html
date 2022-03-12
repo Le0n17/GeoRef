@@ -8,8 +8,8 @@
     <title>Practica 3</title>
 </head>
 <body>
-     <center>
-    <p style="color: aliceblue;">
+     
+    
     <p style="color: aliceblue;">Haz click en el boton para botener coordenadas</p>
     <button onclick="getLocation()">Obtener Coordenadas</button>
     <p id="mapa"></p>
@@ -23,11 +23,13 @@
 
         function muestraPosicion(posicion){
             
+            
             console.log(posicion)
-            mapa.innerHTML= "Latitud:" + posicion.coords.latitude +"<br>" +"Longitud:" + posicion.coords.longitude;
+            
+             mapa.innerHTML= "<font color='#ff0000' " +  " Latitud:" + posicion.coords.latitude +"<br>" +"Longitud:" + posicion.coords.longitude+"</font>";
         }
     </script>
-    </center>
+    
     </p>
 </body>
 </html>
