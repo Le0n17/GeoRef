@@ -9,12 +9,11 @@
 </head>
 <body>
      
-    <center>
-    <p style="color: aliceblue;"> Haz click en el boton para botener coordenadas</p>
-    </center>
-    <center>
-    <button onclick="getLocation()">Obtener Coordenadas</button>
-    </center>
+    
+    <p style="color: aliceblue;" ><center> Haz click en el boton para botener coordenadas</center></p>
+    
+    <button onclick="getLocation()"><center> Obtener Coordenadas </center></button>
+    
     <p id="mapa"></p>
     <script>
         var mapa= document.getElementById("mapa");
@@ -29,7 +28,7 @@
             
             console.log(posicion)
             
-             mapa.innerHTML= " <center> <font color="+"#ff0000"+">" +  "<br>" + "Latitud:" + posicion.coords.latitude +"<br>" +"Longitud:" + posicion.coords.longitude+"</font></center>";
+             mapa.innerHTML= " <font color="+"#ff0000"+">" +  "<br>" + "<center>  Latitud:" + posicion.coords.latitude +"</center> <br>" +"<center> Longitud:" + posicion.coords.longitude+"</center></font>";
         }
     </script>
     
