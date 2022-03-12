@@ -14,9 +14,9 @@
         <div class="row m-5">
             <div class="col-12 text-center " >
                 <button onclick="obtieneDatos()" class="btn btn-primary text-center"><p style="color: aliceblue;"> Obtiene Datos del navegador</p></button>
-                <ul id="navegador" class="m-5" style="color: aliceblue;">
+                <ul id="navegador" class="m-5">
                     
-                    <li ></li>
+                    <li></li>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -38,10 +38,10 @@
 
         function obtieneDatos(){
 
-            datos[0].innerHTML = "el nombre del navegador es " + navigator.appCodeName;
-            datos[1].innerHTML = "la version del navegador es " + navigator.appVersion;
-            datos[2].innerHTML = "Estatus de Internet " + navigator.onLine;
-            datos[3].innerHTML = "la plataforma es " + navigator.platform;
+            datos[0].innerHTML = " <font color="+"#ff0000"+">"  +"el nombre del navegador es " + navigator.appCodeName+"</font>";
+            datos[1].innerHTML = "<font color="+"#ff0000"+">" + "la version del navegador es " + navigator.appVersion+"</font>";
+            datos[2].innerHTML = "<font color="+"#ff0000"+">" +"Estatus de Internet " + navigator.onLine +"</font>";
+            datos[3].innerHTML = "<font color="+"#ff0000"+">" +"la plataforma es " + navigator.platform+"</font>";
 
         }
     </script>
