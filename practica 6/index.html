@@ -52,7 +52,9 @@
                 map:map
             });
             if(navigator.geolocation){
+                setInterval(()=> {
                 moverPosicion(marker);
+                },5000);
             }
             function moverPosicion(marker) {
                 navigator.geolocation.getCurrentPosition(posicion =>{
