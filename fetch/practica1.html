@@ -7,11 +7,12 @@
     <title>Practica fetch</title>
 </head>
 <body>
-
+<div id="titulo"></div>
     <div id="paises"></div>
     <script>
         var paises= document.getElementById("paises");
 
+        var titulo = document.getElementById("titulo");
         fetch("datos.json")
         .then( function(response){
             console.log(response);
@@ -27,6 +28,8 @@
                     
                     nombre.textContent="Pais: "+ registro.country + ", casos:"+registro.cases
                     paises.appendChild(nombre);
+                    titulo.appendChild(titulo);
+
                 });
 
             });
