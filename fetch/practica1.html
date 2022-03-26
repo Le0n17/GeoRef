@@ -7,7 +7,7 @@
     <title>Practica fetch</title>
 </head>
 <body>
-<div id="titulo"></div>
+<h1>Casos mas altos de covid latinoamerica</h1>
     <div id="paises"></div>
     <script>
         var paises= document.getElementById("paises");
@@ -18,10 +18,6 @@
             console.log(response);
             response.json().then(function(datos){
 
-
-                let titulo = document.createElement("h1");
-                titulo.textContent = "CASOS COVID MAS ALTOS EN LATINOAMERICA"
-                titulo.appendChild(titulo);
                 datos.forEach(registro=>{
                     
                 
