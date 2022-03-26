@@ -1,0 +1,8 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url("https://www.roche.es/content/dam/rochexx/roche-es/covid-article/antibodies-covid19-stage-1920.jpg");   
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
