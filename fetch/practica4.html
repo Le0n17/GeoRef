@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Practica 4</title>
+    <title>Mapa de información por país Covid-19, en colaboración con los Alumnos de 6o Semestre de Sistemas de la Universidad DeLasalle Bajío hemos creado un mapa mundial con los casos de Covid-19 en tiempo real</title>
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
     function iniciaMapa() {
 
     
-        fetch('paises2.json')
+        fetch('https://sistemasgeo.com/2022/fetch/paises.json')
         .then(function(response) {
 
             response.json().then(function(datos) {
@@ -67,7 +67,7 @@
                     });
 
                     
-                    fetch('paises2.json')
+                    fetch('paises.json')
                     .then(function(respuesta) {
 
                         respuesta.json().then(function(datospaises) {
@@ -124,8 +124,8 @@
 
     
     </script>
-    <script>
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa"
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa">
     </script>
     </body>
 </html>
