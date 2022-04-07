@@ -27,7 +27,7 @@
                     <h1>Google Maps Idiomas</h1>
                 </div>
                 <div class="col-12 text-center">
-                    <select name="idioma" id="idioma" class="form-select" >
+                    <select name="idioma" id="idioma" class="form-select" onchange="this.form.summit()" >
                         <option value="es">Español</option>
                         <option value="en">Ingles</option>
                         <option value="ar">Arabe</option>
@@ -54,6 +54,12 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const idioma = urlParams.get("idioma");
+
+        var script = document.createElement("script");
+        
+        script.src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa" + idioma;
+
+        document.head.appendChild(script);
 
 
         var iniciaMapa = () =>{
@@ -84,9 +90,7 @@
 
 <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa"
-    async defer></script>
+
 
 </body>
 </html>
