@@ -10,20 +10,21 @@
     
         <style>
     
-            html, body {
+            html, body,head,header {
                 margin: 0px;
                 padding: 0px;
+
+               
             }
     
             #map {
     
                 width: 1000px;
                 height: 540px;
-                position:fixed;
-                top: 50%;
-                left: 50%;
-                margin-top: -50px;
-                margin-left: -100px;
+                position:absolute;
+                top: 15%;
+                left: 18%;
+                
     
             }
         </style>
@@ -38,7 +39,7 @@
         <div class="container text-center small">
             <div class="row m-2">
                 <div class="col-6">
-                    <button class="btn btn-sm btn-primary" id="boton">WatchPosition</button>
+                    <button  class="btn btn-sm btn-primary" id="boton">WatchPosition</button>
                 </div>
                 <div class="col-6">
                     <button class="btn btn-sm btn-danger" id="botondetener">Detener watch</button>
